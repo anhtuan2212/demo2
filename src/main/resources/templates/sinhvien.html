@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+  <title>Sinh Viên</title>
+</head>
+<body class="container">
+<h1 style="text-align: center">Bảng Sinh Viên</h1>
+<table class="table table-striped">
+  <tr>
+    <th>Mã Sinh Viên</th>
+    <th>Họ Tên</th>
+    <th>Mã Khoa</th>
+    <th>Năm Sinh</th>
+    <th>Quê Quán</th>
+  </tr>
+  <tr th:each="sv:${lstsv}">
+    <td th:text="${sv.getMasv()}"></td>
+    <td th:text="${sv.getHotensv()}"></td>
+    <td th:text="${sv.getMakhoa()}"></td>
+    <td th:text="${sv.getNamsinh()}"></td>
+    <td th:text="${sv.getQuequan()}"></td>
+  </tr>
+</table>
+</body>
+</html>

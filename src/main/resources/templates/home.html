@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body class="container">
+
+
+<h1 style="text-align: center;color: burlywood" >Bảng Khoa</h1>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Mã Khoa</th>
+        <th>Tên Khoa</th>
+        <th>Điện Thoại</th>
+    </tr>
+    <tr th:each="khoa:${lstkhoa}">
+        <td th:text="${khoa.getMaKhoa()}"></td>
+        <td th:text="${khoa.getTenKhoa()}"></td>
+        <td th:text="${khoa.getDienthoai()}"></td>
+    </tr>
+</table>
+
+<h1 style="text-align: center">Bảng Sinh Viên</h1>
+<table class="table table-secondary table-hover">
+    <tr>
+        <th>Mã Sinh Viên</th>
+        <th>Họ Tên</th>
+        <th>Mã Khoa</th>
+        <th>Năm Sinh</th>
+        <th>Quê Quán</th>
+    </tr>
+    <tr th:each="sv:${lstsv}">
+        <td th:text="${sv.getMasv()}"></td>
+        <td th:text="${sv.getHotensv()}"></td>
+        <td th:text="${sv.getMakhoa()}"></td>
+        <td th:text="${sv.getNamsinh()}"></td>
+        <td th:text="${sv.getQuequan()}"></td>
+    </tr>
+</table>
+
+<h1 style="text-align: center;color: chocolate">Danh Sách Giảng Viên</h1>
+<table class="table table-info table-hover">
+    <tr>
+        <th>Mã Giảng Viên</th>
+        <th>Họ Tên</th>
+        <th>Lương</th>
+        <th>MÃ Khoa</th>
+    </tr>
+    <tr th:each="gv:${lstgv}">
+        <td th:text="${gv.getMagv()}"></td>
+        <td th:text="${gv.getHotengv()}"></td>
+        <td th:text="${gv.getLuong()}"></td>
+        <td th:text="${gv.getMakhoa()}"></td>
+    </tr>
+</table>
+
+<h1 style="text-align: center;color: crimson">Danh Sách Đề Tài</h1>
+<table class="table table-danger table-hover">
+    <tr>
+        <th>Mã Đề Tài</th>
+        <th>Tên Đề Tài</th>
+        <th>Kinh Phí</th>
+        <th>Nơi Thực Tập</th>
+    </tr>
+    <tr th:each="dt:${lstdt}">
+        <td th:text="${dt.getMadt()}"></td>
+        <td th:text="${dt.getTendt()}"></td>
+        <td th:text="${dt.getKinhphi()}"></td>
+        <td th:text="${dt.getNoithuctap()}"></td>
+    </tr>
+</table>
+
+
+<h1 style="text-align: center;color: cadetblue">Hướng Dẫn</h1>
+<table class="table table-warning table-hover">
+    <tr>
+        <th>Mã Sinh Viên</th>
+        <th>Mã Đề Tài</th>
+        <th>Mã Giảng Viên</th>
+        <th>Kết Quả</th>
+    </tr>
+    <tr th:each="hd:${lsthd}">
+        <td th:text="${hd.getMasv()}"></td>
+        <td th:text="${hd.getMadt()}"></td>
+        <td th:text="${hd.getMagv()}"></td>
+        <td th:text="${hd.getKetQua()}"></td>
+    </tr>
+</table>
+</body>
+</html>
